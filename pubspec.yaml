@@ -1,0 +1,32 @@
+name: pant
+description: "A new Flutter project."
+
+# Evita que este paquete se publique accidentalmente en pub.dev
+publish_to: 'none' 
+
+# Versión y número de compilación
+version: 1.0.0+1
+
+# Configuración del entorno
+environment:
+  sdk: ^3.5.4
+
+# Dependencias necesarias para el proyecto
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+# Dependencias para desarrollo y pruebas
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+# Configuración específica para Flutter
+flutter:
+  uses-material-design: true
+
+  # Sección de recursos (assets)
+  assets:
+    - assets/images/
