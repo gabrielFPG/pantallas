@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'drawer_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Iniciar Sesion')),
+      drawer: buildDrawer(context),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -20,14 +22,6 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Imagen centrada en la parte superior
-              Image.asset(
-                'assets/images/icon.png', // Asegúrate de que la imagen exista
-                height: 150,
-                fit: BoxFit.cover,
-              ),
-              SizedBox(height: 30),
-              // Campo de texto para el usuario
               TextFormField(
                 decoration: InputDecoration(labelText: 'Usuario'),
                 validator: (value) {
@@ -39,7 +33,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 onSaved: (value) => _username = value,
               ),
               SizedBox(height: 20),
-              // Campo de texto para la contraseña
               TextFormField(
                 decoration: InputDecoration(labelText: 'Contraseña'),
                 obscureText: true,
@@ -52,7 +45,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 onSaved: (value) => _password = value,
               ),
               SizedBox(height: 40),
-              // Botón para iniciar sesión
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
@@ -62,7 +54,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
                 child: Text('Ingresar'),
               ),
-              // Enlace para registrarse
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/register');

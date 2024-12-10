@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'drawer_widget.dart'; // Asegúrate de tener el archivo drawer_widget.dart en el proyecto
 
 class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Pantalla de Bienvenida'),
+      ),
+      drawer: buildDrawer(context), // Implementación del Drawer
       body: SafeArea(
         child: Center(
           child: Column(
@@ -11,7 +16,7 @@ class WelcomeScreen extends StatelessWidget {
             children: [
               // Texto centrado
               Text(
-                'Bienvenido!',
+                '¡Bienvenido!',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
